@@ -31,5 +31,11 @@ app.post('/api/login', authCtrl.login)
 app.get('api/logout', authCtrl.logout)
 
 //Main endpoints
+app.post('/api/post', mainCtrl.createPost)
+app.get('/api/post/:id', mainCtrl.getUserPosts)
+app.delete('/api/post/:id', mainCtrl.deletePost)
+
+//User endpoints
+app.put('/api/user/:id', mainCtrl.updateUsername)
 
 app.listen(SERVER_PORT, () => console.log(`Server is running on ${SERVER_PORT}`));

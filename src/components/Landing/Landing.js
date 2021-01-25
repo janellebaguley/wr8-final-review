@@ -1,7 +1,8 @@
 import {Component} from 'react'
 import axios from 'axios'
 import {connect} from 'react-redux'
-import {getUser} from '../../redux/reducer'
+import {getUser} from '../../redux/reducer';
+import './Landing.css'
 
 
 class Landing extends Component {
@@ -27,7 +28,7 @@ class Landing extends Component {
         const {username, email, password, verPassword, profilePicture} = this.state;
 
         if(password && password === verPassword){
-            axios.post('/api/register', {usernamme, email, password, profilePicture})
+            axios.post('/api/register', {username, email, password, profilePicture})
             .then(res => {
                 this.props.getUser(res.data)
                 this.props.history.push('/dash')
@@ -49,7 +50,8 @@ class Landing extends Component {
 
     render(){
         return(
-            <section>
+            <div className='landing-container'>
+            <section className='authentication-info'>
                 <h1>Welcome to MemeMountain</h1>
                 {this.state.registerView
                 ? (
@@ -96,6 +98,7 @@ class Landing extends Component {
                     <p>Don't have an account<span onClick={this.handleToggle}>Register here</span></p>
                 </>)}
             </section>
+            </div>
         )
     }
 }

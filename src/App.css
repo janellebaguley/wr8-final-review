@@ -1,38 +1,46 @@
 .App {
   text-align: center;
+  background-color: #25AAE1;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input {
+  height: 30px;
+  width: 350px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-bottom: 2px solid white;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+button {
+  height: 30px;
+  width: 300px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 15px;
+  font-size: 20px;
+}
+button:hover {
+  background-color: white;
+  color: #444445;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+button:active {
+  background-color: transparent;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* changes placeholders to whatever you want */
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */ 
+  color: white; 
+  opacity: 1; /* Firefox */ 
+  } 
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */ 
+  color: white; 
+  } 
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */ 
+  color: white; 
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
